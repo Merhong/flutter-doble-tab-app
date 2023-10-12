@@ -63,14 +63,11 @@ class _DoubleTabbarState extends State<DoubleTabbar>
         });
       },
       controller: _tabController1,
-      labelColor: Colors.black,
+      labelColor: Colors.brown, // 라벨의 색상 지정
       tabs: [
-        Tab(
-          icon: Icon(Icons.home, color: Colors.black),
-          text: 'Home',
-        ),
-        Tab(icon: Icon(Icons.favorite, color: Colors.black), text: 'Favorites'),
-        Tab(icon: Icon(Icons.settings, color: Colors.black), text: 'Settings'),
+        Tab(icon: Icon(Icons.home), text: 'Home'),
+        Tab(icon: Icon(Icons.favorite), text: 'Favorites'),
+        Tab(icon: Icon(Icons.settings), text: 'Settings'),
       ],
     );
   }
@@ -83,13 +80,11 @@ class _DoubleTabbarState extends State<DoubleTabbar>
         });
       },
       controller: _tabController2,
-      labelColor: Colors.black,
+      labelColor: Colors.teal, // 라벨의 색상 지정
       tabs: [
-        Tab(icon: Icon(Icons.home, color: Colors.black), text: 'Home2'),
-        Tab(
-            icon: Icon(Icons.favorite, color: Colors.black),
-            text: 'Favorites2'),
-        Tab(icon: Icon(Icons.settings, color: Colors.black), text: 'Settings2'),
+        Tab(icon: Icon(Icons.home), text: 'Home2'),
+        Tab(icon: Icon(Icons.favorite), text: 'Favorites2'),
+        Tab(icon: Icon(Icons.settings), text: 'Settings2'),
       ],
     );
   }
