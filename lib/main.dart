@@ -15,16 +15,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-class DoubleTabbar extends StatefulWidget{
+class DoubleTabbar extends StatefulWidget {
   DoubleTabbar({Key? key}) : super(key: key);
 
   @override
   State<DoubleTabbar> createState() => _DoubleTabbarState();
 }
 
-class _DoubleTabbarState extends State<DoubleTabbar>  with TickerProviderStateMixin{
-
+class _DoubleTabbarState extends State<DoubleTabbar>
+    with TickerProviderStateMixin {
   int tabNumber = 1;
   late TabController _tabController1;
   late TabController _tabController2;
@@ -39,9 +38,7 @@ class _DoubleTabbarState extends State<DoubleTabbar>  with TickerProviderStateMi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text('Flutter TabBar Example ${tabNumber}')
-        ),
+        appBar: AppBar(title: Text('Flutter TabBar Example ${tabNumber}')),
         body: Column(
           children: [
             _tabbar1(),
@@ -49,45 +46,50 @@ class _DoubleTabbarState extends State<DoubleTabbar>  with TickerProviderStateMi
             Expanded(
               child: Stack(
                 children: [
-                  if(tabNumber == 1) _view1(),
-                  if(tabNumber == 2) _view2()
+                  if (tabNumber == 1) _view1(),
+                  if (tabNumber == 2) _view2()
                 ],
               ),
             ),
-
           ],
-        )
-    );
+        ));
   }
 
   TabBar _tabbar1() {
     return TabBar(
-      onTap: (v){
+      onTap: (v) {
         setState(() {
           tabNumber = 1;
         });
       },
       controller: _tabController1,
+      labelColor: Colors.black,
       tabs: [
-        Tab(icon: Icon(Icons.home), text: 'Home',),
-        Tab(icon: Icon(Icons.favorite), text: 'Favorites'),
-        Tab(icon: Icon(Icons.settings), text: 'Settings'),
+        Tab(
+          icon: Icon(Icons.home, color: Colors.black),
+          text: 'Home',
+        ),
+        Tab(icon: Icon(Icons.favorite, color: Colors.black), text: 'Favorites'),
+        Tab(icon: Icon(Icons.settings, color: Colors.black), text: 'Settings'),
       ],
     );
   }
 
   TabBar _tabbar2() {
     return TabBar(
-      onTap: (v){
+      onTap: (v) {
         setState(() {
           tabNumber = 2;
         });
       },
       controller: _tabController2,
+      labelColor: Colors.black,
       tabs: [
-        Tab(icon: Icon(Icons.home), text: 'Home2'),
-        Tab(icon: Icon(Icons.favorite), text: 'Favorites2'),
-        Tab(icon: Icon(Icons.settings), text: 'Settings2'),
+        Tab(icon: Icon(Icons.home, color: Colors.black), text: 'Home2'),
+        Tab(
+            icon: Icon(Icons.favorite, color: Colors.black),
+            text: 'Favorites2'),
+        Tab(icon: Icon(Icons.settings, color: Colors.black), text: 'Settings2'),
       ],
     );
   }
